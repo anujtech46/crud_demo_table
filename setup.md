@@ -3,8 +3,8 @@
 2. @angular/cli: v1.4.1
 
 # Setup Instructions
-1. clone the project.
+1. Clone the project.
 2. Go to project folder from terminal.
 2. RUN npm install
 3. RUN ng serve
-4. open http://localhost:4200
+4. Open http://localhost:4200
