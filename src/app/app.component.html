@@ -1,57 +1,3 @@
-<!-- <section>
-    <header>
-        <h1>Todos</h1>
-        <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
-    </header>
-    <section>
-        <ul>
-            <li *ngFor="let todo of todos" [class.completed]="todo.complete">
-                <div class="view">
-                    <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-                    <label>{{todo.title}}</label>
-                    <button class="destroy" (click)="removeTodo(todo)"></button>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <footer class="footer" *ngIf="todos.length > 0">
-        <span class="todo-count">
-      <strong>{{todos.length}}</strong>
-      {{todos.length === 1 ? 'item' : 'items'}} left
-    </span>
-    </footer>
-</section> -->
-
-<!-- <section class="todoapp">
-    <header class="header">
-        <h1>Todos</h1>
-        <input class="new-todo" placeholder="What needs to be done?" [(ngModel)]="newTodo.title" autofocus="" (keyup.enter)="addTodo()">
-    </header>
-    <section class="main" *ngIf="getTodos().length > 0">
-        <ul class="todo-list">
-            <li *ngFor="let todo of getTodos()" [class.completed]="todo.complete">
-                <div class="view">
-                    <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
-                    <label>{{todo.title}}</label>
-                    <button class="destroy" (click)="removeTodo(todo)">Delete</button>
-                </div>
-            </li>
-        </ul>
-    </section>
-    <footer class="footer" *ngIf="getTodos().length > 0">
-        <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
-    </footer>
-</section> -->
-
-<!-- [property]="expression": set property of an element to the value of expression
-(event)="statement": execute statement when event occurred
-[(property)] = "expression": create two-way binding with expression
-[class.special]="expression" add special CSS class to element when the 
-value of ecression id truthy
-[style.color]="expression" set color CSS property to the value of expression
-
--->
-
 <h1>{{message}}</h1>
 <hr>
 <input type="button" value="Add" class="btn btn-default" (click)="addEmp()" />
@@ -78,7 +24,6 @@ value of ecression id truthy
     </table>
 </div>
 <div>{{statusMessage}}</div>
-
 
 <!--The Html Template for Read-Only Rows-->
 <ng-template #readOnlyTemplate let-emp>

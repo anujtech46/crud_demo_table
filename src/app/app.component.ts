@@ -1,51 +1,3 @@
-// import { NgModule, Component } from '@angular/core';
-// import { TodoDataService } from './todo-data.service';
-// import { FormsModule } from '@angular/forms';
-// import {Todo} from './todo';
-
-// @NgModule({
-//   imports: [
-//     FormsModule
-//   ]
-// })
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css'],
-//   providers: [TodoDataService]
-// })
-// export class AppComponent {
-//   title = 'app';
-//   newTodo: Todo = new Todo();
-//   todos: Todo[];
-
-//   // Ask Angular DI system to inject the dependency
-//   // associated with the dependency injection token 'TodoDataService'
-//   // and assign it to a property called 'todoDataService'
-//   constructor(private todoDataService: TodoDataService) {}
-
-//   // service is now available as this.todoDataService
-//   toggleTodoComplete(todo) {
-//     this.todoDataService.toggleTodoComplete(todo);
-//   }
-
-//   addTodo() {
-//     this.todoDataService.addTodo(this.newTodo);
-//     this.newTodo = new Todo();
-//   }
-
-//   removeTodo(todo) {
-//     this.todoDataService.deleteTodoById(todo.id);
-//   }
-
-//   getTodos() {
-//     this.todos = this.todoDataService.getAllTodos();
-//     return this.todos;
-//   }
-// }
-
-
 import {TemplateRef, ViewChild} from '@angular/core';
 import {Component, OnInit} from '@angular/core';
 import {Employee} from './employee.model';
@@ -90,7 +42,7 @@ export class AppComponent implements OnInit {
     editEmployee(emp: Employee) {
         this.selemp = emp;
     }
-    // 7. Load either Read-Onoy Template or EditTemplate
+    // 7. Load either Read-Only Template or EditTemplate
     loadTemplate(emp: Employee) {
         if (this.selemp && this.selemp.EmpNo === emp.EmpNo) {
             return this.editTemplate;
@@ -112,6 +64,9 @@ export class AppComponent implements OnInit {
     }
     // 9. Cancel edit
     cancel() {
+        this.employees = this.employees.filter((emp: Employee)  => {
+            return emp.EmpNo !== this.selemp.EmpNo;
+        });
         this.selemp = null;
     }
     // 10 Delete Employee
